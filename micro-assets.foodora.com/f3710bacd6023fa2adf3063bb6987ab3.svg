@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="432px" height="175px" viewBox="0 0 432 175" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>5C6640E1-F4FE-4C8F-BA35-BE45845A01DA</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="432" height="175"></rect>
+        <rect id="path-3" x="0" y="0" width="432" height="175"></rect>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-5">
+            <stop stop-color="#DFDFDF" offset="0%"></stop>
+            <stop stop-color="#E8E8E8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="43.293457%" y1="100%" x2="50%" y2="23.4603634%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="100%" x2="91.7975081%" y2="74.527779%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.02936238" offset="27.6656239%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.644148172" offset="56.4874879%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="New-tracking-card-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Tracking-card" transform="translate(-153.000000, -167.000000)">
+            <g id="Group-11-Copy" transform="translate(153.000000, 167.000000)">
+                <g id="Group-9">
+                    <g id="-g-img_tracking_card_map">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="bg" fill="#FFFFFF" xlink:href="#path-1"></use>
+                        <g id="svg-map" mask="url(#mask-2)">
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <use id="Rectangle-path" fill="#E8E8E8" fill-rule="nonzero" xlink:href="#path-3"></use>
+                            <rect id="Rectangle-path" fill="url(#linearGradient-5)" fill-rule="nonzero" mask="url(#mask-4)" x="0" y="0" width="432" height="175"></rect>
+                            <path d="M405.465,-11.0286458 L307.875,128.515625" id="Shape" stroke="#FFFFFF" stroke-width="4" mask="url(#mask-4)"></path>
+                            <path d="M437.6625,32.2048611 L351.0975,-9.65538194" id="Shape" stroke="#FFFFFF" stroke-width="4" mask="url(#mask-4)"></path>
+                            <path d="M246.2025,-12.1284722 L195,53.7760417" id="Shape" stroke="#FFFFFF" stroke-width="4" mask="url(#mask-4)"></path>
+                            <path d="M162.3075,-10.4939236 L132.375,17.0138889" id="Shape" stroke="#FFFFFF" stroke-width="4" mask="url(#mask-4)"></path>
+                            <path d="M105.705,-9.4609375 L129.5025,17.0138889 C129.5025,17.0138889 174.1875,53.7274306 191.4375,64.2092014 C208.6875,74.6909722 288.75,117.274306 288.75,117.274306 C288.75,117.274306 333,141.276042 350.25,149.782986 C367.5,158.289931 411,179.709201 411,179.709201" id="Shape" stroke="#FFFFFF" stroke-width="6" mask="url(#mask-4)"></path>
+                            <polygon id="Shape" stroke="#E2E2E1" fill="#F1F1F1" fill-rule="nonzero" mask="url(#mask-4)" points="239.25 9.11458333 210 48.0034722 254.7975 71.0451389 284.25 31.2934028"></polygon>
+                            <path d="M179.625,85.0694444 C186.63773,83.6864063 194.017359,84.2116924 200.625,86.5642361 C211.5,90.5381944 228.75,105.121528 236.25,107.855903 C243.75,110.590278 315.75,145.833333 315.75,145.833333 L375.375,176.215278 L325.2525,176.215278 L224.625,128.011285 L197.625,114.539931 L171.1275,94.5911458 C171.1275,94.5911458 174,86.3272569 179.625,85.0694444 Z" id="Shape" fill="#CAE6A3" fill-rule="nonzero" mask="url(#mask-4)"></path>
+                            <path d="M112.875,176.257812 C112.875,176.257812 69,151.302083 61.125,146.137153 C53.25,140.972222 32.25,124.869792 24.75,117.578125 C17.25,110.286458 0,95.703125 0,95.703125 L0,-6.07638889 L32.25,-6.07638889 L69.375,21.5711806 C69.375,21.5711806 111,50.7378472 118.875,56.5104167 C126.75,62.2829861 171.375,94.1840278 178.5,98.1336806 C185.625,102.083333 206.4975,117.778646 206.4975,117.778646 L276.75,152.110243 L325.2525,176.215278 L112.875,176.257812 Z" id="Shape" fill="#F0EDE5" fill-rule="nonzero" mask="url(#mask-4)"></path>
+                            <path d="M322.875,176.215278 L237.375,136.111111 L198.8775,117.474826 L157.6275,89.1163194 C157.6275,89.1163194 115.8,58.4244792 102.6225,49.8263889 C84.6225,38.0807292 47.1225,10.0260417 38.625,4.96440972 C33.2052387,1.67679928 28.1827308,-2.02003395 23.625,-6.07638889 L0,-6.07638889 L0,92.3611111 C0,92.3611111 8.3775,101.275174 14.8725,105.729167 C21.3675,110.18316 38.8725,122.542535 43.875,128.515625 C48.8775,134.488715 61.3725,140.164063 68.8725,142.99566 C76.3725,145.827257 83.37,152.310764 87.375,153.93316 C91.38,155.555556 107.8725,157.578993 113.8725,160.416667 C119.8725,163.25434 127.635,166.845486 131.1225,170.898438 C134.61,174.951389 138.1425,176.263889 138.1425,176.263889 L322.875,176.215278 Z" id="Shape" fill="#A1CBFF" fill-rule="nonzero" mask="url(#mask-4)"></path>
+                            <path d="M121.125,-9.87413194 C121.125,-9.87413194 141.375,12.9609375 148.3725,19.0373264 C155.37,25.1137153 192.87,53.5694444 206.8725,61.2196181 C220.875,68.8697917 304.3725,114.643229 304.3725,114.643229 L432,179.861111" id="Shape" stroke="#FFFFFF" stroke-width="6" mask="url(#mask-4)"></path>
+                            <path d="M29.6221969,126.935306 L-0.5,158.693959 L-0.5,104.11546 L29.6221969,126.935306 Z" id="Shape" stroke="#E2E2E1" fill="#F1F1F1" fill-rule="nonzero" mask="url(#mask-4)"></path>
+                            <path d="M28.0915344,136.800568 L23.2714694,133.617643 L8.02378431,149.66433 L12.32055,152.77234 L28.0915344,136.800568 Z" id="Shape" stroke="#E2E2E1" fill="#F1F1F1" fill-rule="nonzero" mask="url(#mask-4)"></path>
+                            <polygon id="Shape" fill="#F2E9D6" fill-rule="nonzero" mask="url(#mask-4)" points="168.375 -0.607638889 157.5 14.3828125 192.6225 35.6501736 203.625 20.4592014"></polygon>
+                            <polygon id="Shape" fill="#EDE0CC" fill-rule="nonzero" mask="url(#mask-4)" points="158.2275 16.734375 157.5 14.3828125 192.6225 35.6501736 193.125 37.9288194"></polygon>
+                            <polygon id="Shape" fill="#D8C4AC" fill-rule="nonzero" mask="url(#mask-4)" points="203.625 20.4592014 192.6225 35.6501736 193.125 37.9288194 203.625 23.1935764"></polygon>
+                            <polygon id="Shape" fill="#ECECEC" fill-rule="nonzero" mask="url(#mask-4)" points="191.13 12.9913194 199.5 2.12673611 179.625 -6.07638889 224.25 -6.07638889 203.625 21.6501736 203.625 20.4592014"></polygon>
+                            <polygon id="Shape" fill="#CECED3" fill-rule="nonzero" mask="url(#mask-4)" points="203.625 23.1935764 203.625 21.6501736 224.25 -6.07638889 225.5625 -6.07638889"></polygon>
+                            <path d="M178.160436,174.754279 C218.756588,154.791387 245.856546,141.540386 259.460311,135.001277 C279.865958,125.192614 311.262188,111.313658 318.408392,107.201121 C325.554597,103.088584 341.935484,90.7829412 352.11435,88.5987982 C358.900261,87.1427028 363.200291,88.3266842 365.01444,92.1507423 C349.081688,104.087223 339.162589,111.155717 335.257144,113.356225 C331.351698,115.556733 302.451214,130.111217 248.555691,157.019677 L213.271396,174.754279" id="Path-2" stroke="#8EC693" stroke-linecap="round" stroke-dasharray="2,3" mask="url(#mask-4)" transform="translate(271.587438, 131.375381) scale(-1, 1) translate(-271.587438, -131.375381) "></path>
+                            <path d="M319.784242,154.852977 L237.637081,126.536128" id="Path-3" stroke="#8EC693" stroke-linecap="round" stroke-dasharray="2,3" mask="url(#mask-4)"></path>
+                        </g>
+                        <g id="gradient" mask="url(#mask-2)">
+                            <g transform="translate(216.000000, 87.500000) scale(-1, 1) translate(-216.000000, -87.500000) " id="gradient-white">
+                                <rect fill="url(#linearGradient-6)" x="0" y="0" width="432" height="175"></rect>
+                                <rect fill="url(#linearGradient-7)" x="0" y="0" width="432" height="175"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

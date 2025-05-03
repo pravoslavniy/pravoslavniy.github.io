@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ВІДСІЧ - Васильківський Громадський Рух</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .hero-bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+      .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .active-nav {
+        border-bottom: 2px solid #000;
+        font-weight: 600;
+      }
+
+      .header-scrolled {
+        background-color: #f8f8f8 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .header-scrolled .header-inner {
+        padding-top: 0.5rem; /* py-2 */
+        padding-bottom: 0.5rem;
+      }
+
+      .header-scrolled nav a {
+        font-size: 0.875rem; /* text-sm */
+      }
+
+      .header-scrolled .logo-block {
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+
+      .header-scrolled .active-nav {
+        border-color: #dc221c;
+        color: #dc221c;
+      }
+      .main-nav-wrapper {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .header-scrolled .main-nav-wrapper {
+        position: fixed;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+        z-index: 50;
+        width: max-content;
+      }
+
+      .header-scrolled .main-nav {
+        background-color: white;
+        border-radius: 9999px; /* fully rounded */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 bg-white shadow-sm transition-all duration-300"
+    >
+      <div
+        class="header-inner container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <!-- Логотип -->
+        <div class="logo-block flex items-center transition-all duration-300">
+          <img
+            src="img/svg/new-logo.svg"
+            alt="Логотип ВІДСІЧ"
+            class="h-10 w-auto logo-img"
+          />
+        </div>
+
+        <!-- Меню и кнопка в одной строке, с отступом между ними -->
+        <div class="flex items-center justify-between flex-grow ml-8">
+          <div
+            class="main-nav-wrapper hidden md:flex justify-center w-full transition-all duration-300"
+          >
+            <nav
+              class="main-nav flex space-x-8 px-6 py-2 bg-white rounded-full shadow-md transition-all duration-300"
+            >
+              <a href="#home" class="py-2 active-nav">Головна</a>
+              <a href="#about" class="py-2 hover:text-[#DC221C] transition"
+                >Про нас</a
+              >
+              <a href="#actions" class="py-2 hover:text-[#DC221C] transition"
+                >Новини</a
+              >
+              <a href="#media" class="py-2 hover:text-[#DC221C] transition"
+                >Медіа</a
+              >
+              <a href="#contact" class="py-2 hover:text-[#DC221C] transition"
+                >Контакти</a
+              >
+            </nav>
+          </div>
+
+          <div class="flex items-center space-x-4 ml-8">
+            <button
+              class="bg-black text-white px-4 py-2 rounded hover:bg-[#DC221C] transition"
+            >
+              Підтримати
+            </button>
+            <button class="md:hidden" id="mobile-menu-button">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        class="md:hidden hidden bg-white w-full py-4 px-4 shadow-md"
+        id="mobile-menu"
+      >
+        <div class="flex flex-col space-y-3">
+          <a href="#home" class="py-2 border-b border-gray-100">Головна</a>
+          <a href="#about" class="py-2 border-b border-gray-100">Про нас</a>
+          <a href="#actions" class="py-2 border-b border-gray-100">Акції</a>
+          <a href="#media" class="py-2 border-b border-gray-100">Медіа</a>
+          <a href="#contact" class="py-2">Контакти</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          Громадський рух ВІДСІЧ
+        </h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+          Об'єднуємо зусилля для захисту прав людини, демократичних цінностей та
+          протидії пропаганді
+        </p>
+        <div
+          class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4"
+        >
+          <button
+            class="bg-[#DC221C] text-white px-6 py-3 rounded font-medium hover:bg-[#BF2121] transition"
+          >
+            Долучитися
+          </button>
+          <button
+            class="bg-transparent border-2 border-white px-6 py-3 rounded font-medium hover:bg-white hover:text-black transition"
+          >
+            Дізнатися більше
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Наша місія</h2>
+          <p class="text-lg text-gray-700">
+            Ми віримо у силу громадянського суспільства та активно працюємо над
+            захистом прав людини, поширенням демократичних цінностей та
+            протидіємо дезінформації. Наша мета - об'єднати людей для створення
+            справедливого та відкритого суспільства.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-shield-alt text-[#DC221C] text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Захист прав</h3>
+            <p class="text-gray-600">
+              Ми захищаємо основні права та свободи громадян, надаємо юридичну
+              підтримку та інформуємо про способи захисту.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-graduation-cap text-[#DC221C] text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Просвітництво</h3>
+            <p class="text-gray-600">
+              Організовуємо лекції, семінари та публікуємо матеріали для
+              підвищення обізнаності громадян.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-users text-[#DC221C] text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Мобілізація</h3>
+            <p class="text-gray-600">
+              Координуємо спільні дії для досягнення позитивних змін у
+              суспільстві та державі.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+            <img
+              src="https://images.unsplash.com/photo-1529107386315-e1c2e26d10d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+              alt="Vidsih team"
+              class="rounded-lg shadow-md"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6">Про рух ВІДСІЧ</h2>
+            <p class="text-gray-700 mb-4">
+              Задачі — насамперед, боротьба з корупцією. Допомога відповідним
+              структурам у проведенні люстрації в місті та районі. Боротьба з
+              наркоторгівлею та гральним бізнесом. Організація дозвілля молоді
+              шляхом проведення спортивних та культурно-масових заходів. Голова
+              партії Сергій Бірюков
+            </p>
+            <p class="text-gray-700 mb-4">
+              Наша команда складається з активістів, журналістів, юристів та
+              волонтерів, які об'єднали зусилля для боротьби з дезінформацією та
+              захисту громадянських свобод.
+            </p>
+            <p class="text-gray-700 mb-6">
+              Ми віримо, що лише об'єднані зусилля громадянського суспільства
+              можуть забезпечити стабільний розвиток демократії в Україні.
+            </p>
+            <button
+              class="bg-black text-white px-6 py-3 rounded font-medium hover:bg-[#BF2121] transition"
+            >
+              Дізнатися більше про нас
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actions Section -->
+    <section id="actions" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Наші акції та події</h2>
+          <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+            Беріть участь у наших акціях та допомагайте створювати позитивні
+            зміни у суспільстві
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md news-card transition duration-300"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1529107386315-e1c2e26d10d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+              alt="Action 1"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm text-[#DC221C] font-medium"
+                  >15 червня 2023</span
+                >
+                <span class="text-xs bg-gray-100 px-2 py-1 rounded">Київ</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3">Марш за демократію</h3>
+              <p class="text-gray-600 mb-4">
+                Масова акція на підтримку демократичних цінностей та
+                європейського майбутнього України.
+              </p>
+              <button
+                class="text-[#DC221C] font-medium hover:text-yellow-700 transition"
+              >
+                Детальніше →
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md news-card transition duration-300"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              alt="Action 2"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm text-[#DC221C] font-medium"
+                  >22 червня 2023</span
+                >
+                <span class="text-xs bg-gray-100 px-2 py-1 rounded"
+                  >Онлайн</span
+                >
+              </div>
+              <h3 class="text-xl font-semibold mb-3">
+                Вебінар: Як розпізнати пропаганду
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Практичні поради з виявлення маніпуляцій та дезінформації в
+                медіа.
+              </p>
+              <button
+                class="text-[#DC221C] font-medium hover:text-yellow-700 transition"
+              >
+                Детальніше →
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md news-card transition duration-300"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              alt="Action 3"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm text-[#DC221C] font-medium"
+                  >30 червня 2023</span
+                >
+                <span class="text-xs bg-gray-100 px-2 py-1 rounded">Львів</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3">
+                Фестиваль громадянської активності
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Зустріч активістів, дискусії та майстер-класи з громадянської
+                участі.
+              </p>
+              <button
+                class="text-[#DC221C] font-medium hover:text-yellow-700 transition"
+              >
+                Детальніше →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <button
+            class="bg-black text-white px-6 py-3 rounded font-medium hover:bg-[#BF2121] transition"
+          >
+            Всі події
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media" class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Медіа</h2>
+          <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+            Фото та відео з наших заходів та акцій
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div class="aspect-square bg-gray-200 rounded overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              alt="Media 1"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
+            />
+          </div>
+          <div class="aspect-square bg-gray-200 rounded overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1529107386315-e1c2e26d10d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+              alt="Media 2"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
+            />
+          </div>
+          <div class="aspect-square bg-gray-200 rounded overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              alt="Media 3"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
+            />
+          </div>
+          <div class="aspect-square bg-gray-200 rounded overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              alt="Media 4"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
+            />
+          </div>
+          <div class="aspect-square bg-gray-200 rounded overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              alt="Media 5"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
+            />
+          </div>
+          <div class="aspect-square bg-gray-200 rounded overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1529107386315-e1c2e26d10d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+              alt="Media 6"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
+            />
+          </div>
+          <div class="aspect-square bg-gray-200 rounded overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              alt="Media 7"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
+            />
+          </div>
+          <div class="aspect-square bg-gray-200 rounded overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              alt="Media 8"
+              class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
+            />
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <button
+            class="bg-black text-white px-6 py-3 rounded font-medium hover:bg-[#BF2121] transition"
+          >
+            Більше медіа
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-black text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-4">Підпишіться на нашу розсилку</h2>
+          <p class="text-lg text-gray-300 mb-8">
+            Отримуйте останні новини про наші акції, події та ініціативи прямо
+            на вашу електронну пошту
+          </p>
+
+          <form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+            <input
+              type="email"
+              placeholder="Ваша електронна пошта"
+              class="flex-grow px-4 py-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            />
+            <button
+              type="submit"
+              class="bg-[#DC221C] text-white px-6 py-3 rounded font-medium hover:bg-[#BF2121] transition"
+            >
+              Підписатися
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Контакти</h2>
+          <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+            Зв'яжіться з нами, якщо у вас є питання чи пропозиції
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Наші контакти</h3>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <i class="fas fa-map-marker-alt text-[#DC221C] mt-1"></i>
+                <div>
+                  <p class="font-medium">Адреса</p>
+                  <p class="text-gray-600">
+                    Київська область, м.Васильків вул. Соборна, 93
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <i class="fas fa-envelope text-[#DC221C] mt-1"></i>
+                <div>
+                  <p class="font-medium">Електронна пошта</p>
+                  <p class="text-gray-600">vidsich2014@gmail.com</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <i class="fas fa-phone text-[#DC221C] mt-1"></i>
+                <div>
+                  <p class="font-medium">Телефон</p>
+                  <p class="text-gray-600">+38 (067) 404-10-40</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <h3 class="text-xl font-semibold mb-4">Соціальні мережі</h3>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-yellow-500 transition"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-yellow-500 transition"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-yellow-500 transition"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-yellow-500 transition"
+                  ><i class="fab fa-telegram-plane"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Напишіть нам</h3>
+            <form class="space-y-4">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Ваше ім'я"
+                  class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Ваша електронна пошта"
+                  class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Тема"
+                  class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                />
+              </div>
+              <div>
+                <textarea
+                  placeholder="Ваше повідомлення"
+                  rows="4"
+                  class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="bg-black text-white px-6 py-3 rounded font-medium hover:bg-[#DC221C] transition"
+              >
+                Надіслати
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <div
+                class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-xl"
+              >
+                В
+              </div>
+              <span class="text-xl font-bold">ВІДСІЧ</span>
+            </div>
+            <p class="text-gray-400">
+              Громадський рух, що захищає права людини, демократичні цінності та
+              бореться з пропагандою.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Навігація</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-yellow-500 transition"
+                  >Головна</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-yellow-500 transition"
+                  >Про нас</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#actions"
+                  class="text-gray-400 hover:text-yellow-500 transition"
+                  >Акції</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#media"
+                  class="text-gray-400 hover:text-yellow-500 transition"
+                  >Медіа</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-yellow-500 transition"
+                  >Контакти</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Підтримати</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-500 transition"
+                  >Стати волонтером</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-500 transition"
+                  >Фінансова підтримка</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-500 transition"
+                  >Партнерство</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-500 transition"
+                  >Медіа про нас</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Юридична інформація</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-500 transition"
+                  >Політика конфіденційності</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-500 transition"
+                  >Умови використання</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-500 transition"
+                  >Юридична інформація</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-500 mb-4 md:mb-0">
+            © 2023 Васильківська ВІДСІЧ. Всі права захищені.
+          </p>
+          <div class="flex space-x-6">
+            <a href="#" class="text-gray-500 hover:text-yellow-500 transition"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="text-gray-500 hover:text-yellow-500 transition"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="text-gray-500 hover:text-yellow-500 transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-gray-500 hover:text-yellow-500 transition"
+              ><i class="fab fa-telegram-plane"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+
+          // Close mobile menu if open
+          if (!mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.add("hidden");
+          }
+        });
+      });
+
+      // Highlight active nav link on scroll
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll("nav a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (pageYOffset >= sectionTop - 300) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active-nav");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active-nav");
+          }
+        });
+      });
+      const header = document.querySelector("header");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("header-scrolled");
+        } else {
+          header.classList.remove("header-scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>

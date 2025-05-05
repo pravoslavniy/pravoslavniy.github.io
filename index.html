@@ -16,29 +16,39 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
+      header {
+        position: relative;
+        padding-bottom: 2rem;
+        z-index: 40; /* или больше при необходимости */
+      }
+
+      .header-socials {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        display: flex;
+        gap: 1rem;
+        z-index: 50;
+      }
       body {
         font-family: "Inter", sans-serif;
         scroll-behavior: smooth;
       }
       .hero-bg {
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-          url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80");
-        background-size: cover;
-        background-position: center;
+        background: linear-gradient(
+          rgba(255, 255, 255, 0.7),
+          rgba(255, 255, 255, 0.7)
+        );
       }
       .news-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
-      .active-nav {
-        border-bottom: 2px solid #000;
-        font-weight: 600;
-      }
 
       .header-scrolled {
-        background-color: #f8f8f8 !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        transform: translateY(-2px);
+        background-color: transparent !important;
+        box-shadow: none;
+        transform: none;
       }
 
       .header-scrolled .header-inner {
@@ -46,57 +56,115 @@
         padding-bottom: 0.5rem;
       }
 
-      .header-scrolled nav a {
-        font-size: 0.875rem; /* text-sm */
-      }
-
       .header-scrolled .logo-block {
-        opacity: 0;
-        transform: translateY(-20px);
-        pointer-events: none;
-        transition: all 0.3s ease;
+        transform: translateY(-200%);
+        transition: all 0.5s ease;
       }
 
-      .header-scrolled .active-nav {
-        border-color: #dc221c;
-        color: #dc221c;
+      .main-nav {
+        max-width: 100%;
+        flex-wrap: wrap;
       }
+
       .main-nav-wrapper {
+        position: fixed;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 50;
         opacity: 1;
-        transform: translateY(0);
       }
 
       .header-scrolled .main-nav-wrapper {
         position: fixed;
         top: 16px;
         left: 50%;
-        transform: translateX(-50%) translateY(0);
-        opacity: 1;
+        transform: translateX(-50%);
         z-index: 50;
-        width: max-content;
+        opacity: 1;
       }
 
       .header-scrolled .main-nav {
-        background-color: white;
-        border-radius: 9999px; /* fully rounded */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background-color: #f6dddf; /* новый цвет овала */
+        border-radius: 9999px;
+      }
+      .support-btn {
+        border-radius: 0.375rem;
+        transition: border-radius 0.8s ease, background-color 0.4s ease;
+      }
+
+      .header-scrolled .support-btn {
+        border-radius: 9999px;
+      }
+      /* Мини-логотип по умолчанию — скрыт */
+      .nav-logo-icon {
+        opacity: 0;
+        transform: translateX(-24px);
+        transition: opacity 0.01s ease, transform 0.01s ease;
+      }
+
+      .header-scrolled .nav-logo-icon {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      @font-face {
+        font-family: "Gilroy Bold";
+        src: url("/fonts/Gilroy-Bold.eot") format("eot"),
+          url("/fonts/Gilroy-Bold.woff") format("woff");
+        font-weight: 900;
+        font-style: normal;
+      }
+
+      .font-gilroy-bold {
+        font-family: "Gilroy Bold", sans-serif;
       }
     </style>
   </head>
   <body class="bg-white text-gray-900">
     <!-- Header -->
-    <header
-      class="sticky top-0 z-50 bg-white shadow-sm transition-all duration-300"
-    >
+    <header class="sz-50 bg-white shadow-sm transition-all duration-300">
+      <div class="header-socials absolute top-4 right-4 flex space-x-4 z-[100]">
+        <a href="https://www.facebook.com/ngo.vidsich" target="_blank">
+          <img
+            src="img/svg/footer-fb-icon.svg"
+            alt="facebook"
+            class="h-5 w-5 z-50"
+          />
+        </a>
+        <a href="https://www.instagram.com/cpd_peremoga/" target="_blank">
+          <img
+            src="img/svg/footer-instagram-icon.svg"
+            alt="instagram"
+            class="h-5 w-5"
+          />
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCgo-ecJcJ_o9pfmOUJv_oXg/feed"
+          target="_blank"
+        >
+          <img
+            src="img/svg/footer-youtube-icon.svg"
+            alt="youtube"
+            class="h-5 w-5"
+          />
+        </a>
+        <a href="https://www.tiktok.com/@cpdperemoga" target="_blank">
+          <img
+            src="img/svg/footer-tiktok-icon.svg"
+            alt="tiktok"
+            class="h-5 w-5"
+          />
+        </a>
+      </div>
       <div
-        class="header-inner container mx-auto px-4 py-3 flex justify-between items-center"
+        class="header-inner relative container mx-auto px-4 py-3 flex justify-between items-center"
       >
         <!-- Логотип -->
         <div class="logo-block flex items-center transition-all duration-300">
           <img
             src="img/svg/new-logo.svg"
             alt="Логотип ВІДСІЧ"
-            class="h-10 w-auto logo-img"
+            class="h-12 w-auto logo-img"
           />
         </div>
 
@@ -106,9 +174,20 @@
             class="main-nav-wrapper hidden md:flex justify-center w-full transition-all duration-300"
           >
             <nav
-              class="main-nav flex space-x-8 px-6 py-2 bg-white rounded-full shadow-md transition-all duration-300"
+              class="main-nav flex space-x-8 px-6 py-2 bg-white rounded-full transition-all duration-300"
             >
-              <a href="#home" class="py-2 active-nav">Головна</a>
+              <a href="#home">
+                <div
+                  class="nav-logo-icon flex items-center justify-center w-12 h-12 text-[#DC221C] text-3xl font-gilroy-bold opacity-0 transform -translate-x-4 transition-all duration-400 ease-out leading-none"
+                >
+                  <img
+                    src="img/svg/small-logo.svg"
+                    alt="Маленький логотип"
+                    class="w-full h-full object-contain"
+                  />
+                </div>
+              </a>
+
               <a href="#about" class="py-2 hover:text-[#DC221C] transition"
                 >Про нас</a
               >
@@ -121,18 +200,20 @@
               <a href="#contact" class="py-2 hover:text-[#DC221C] transition"
                 >Контакти</a
               >
-            </nav>
-          </div>
 
-          <div class="flex items-center space-x-4 ml-8">
-            <button
-              class="bg-black text-white px-4 py-2 rounded hover:bg-[#DC221C] transition"
-            >
-              Підтримати
-            </button>
-            <button class="md:hidden" id="mobile-menu-button">
-              <i class="fas fa-bars text-xl"></i>
-            </button>
+              <div class="shrink-0">
+                <button
+                  class="support-btn bg-black text-white px-4 py-2 transition-colors duration-300 ease-in-out whitespace-nowrap rounded-full"
+                >
+                  Підтримати
+                </button>
+              </div>
+              <div class="shrink-0 md:hidden">
+                <button id="mobile-menu-button">
+                  <i class="fas fa-bars text-xl"></i>
+                </button>
+              </div>
+            </nav>
           </div>
         </div>
       </div>
@@ -148,33 +229,86 @@
           <a href="#actions" class="py-2 border-b border-gray-100">Акції</a>
           <a href="#media" class="py-2 border-b border-gray-100">Медіа</a>
           <a href="#contact" class="py-2">Контакти</a>
+
+          <!-- Социальные иконки в мобильной версии -->
+          <div
+            class="header-socials md:hidden flex justify-center space-x-4 mt-4"
+          >
+            <a href="https://www.facebook.com/ngo.vidsich" target="_blank">
+              <img
+                src="img/svg/footer-fb-icon.svg"
+                alt="facebook"
+                class="h-6 w-6"
+              />
+            </a>
+            <a href="https://www.instagram.com/cpd_peremoga/" target="_blank">
+              <img
+                src="img/svg/footer-instagram-icon.svg"
+                alt="instagram"
+                class="h-6 w-6"
+              />
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCgo-ecJcJ_o9pfmOUJv_oXg/feed"
+              target="_blank"
+            >
+              <img
+                src="img/svg/footer-youtube-icon.svg"
+                alt="youtube"
+                class="h-6 w-6"
+              />
+            </a>
+            <a href="https://www.tiktok.com/@cpdperemoga" target="_blank">
+              <img
+                src="img/svg/footer-tiktok-icon.svg"
+                alt="tiktok"
+                class="h-6 w-6"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg text-white py-20 md:py-32">
-      <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">
-          Громадський рух ВІДСІЧ
-        </h1>
-        <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
-          Об'єднуємо зусилля для захисту прав людини, демократичних цінностей та
-          протидії пропаганді
-        </p>
-        <div
-          class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4"
-        >
-          <button
-            class="bg-[#DC221C] text-white px-6 py-3 rounded font-medium hover:bg-[#BF2121] transition"
+    <section id="home" class="hero-bg py-10 md:py-16">
+      <div
+        class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between"
+      >
+        <!-- Левый блок с текстом -->
+        <div class="md:w-1/2 text-left">
+          <h1 class="text-4xl md:text-6xl text-[#DC221C] font-gilroy-bold mb-6">
+            Громадський рух ВІДСІЧ
+          </h1>
+          <p
+            class="text-xl md:text-2xl max-w-2xl mb-8 font-gilroy-bold text-gray-600"
           >
-            Долучитися
-          </button>
-          <button
-            class="bg-transparent border-2 border-white px-6 py-3 rounded font-medium hover:bg-white hover:text-black transition"
+            Об'єднуємо зусилля для захисту прав людини, демократичних цінностей
+            та протидії пропаганді
+          </p>
+          <div
+            class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4"
           >
-            Дізнатися більше
-          </button>
+            <button
+              class="bg-[#DC221C] font-gilroy-bold text-white px-6 py-3 rounded font-medium hover:bg-[#BF2121] transition"
+            >
+              Долучитися
+            </button>
+            <button
+              class="bg-transparent font-gilroy-bold border-2 border-[#DC221C] px-6 py-3 rounded font-medium hover:bg-[#DC221C] hover:text-black transition"
+            >
+              Дізнатися більше
+            </button>
+          </div>
+        </div>
+
+        <!-- Правый блок с баннером -->
+        <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+          <img
+            src="img/png/banner-Cossack.png"
+            alt="Козак"
+            class="w-[300px] md:w-[400px] lg:w-[500px] h-auto object-contain"
+          />
         </div>
       </div>
     </section>
@@ -609,7 +743,7 @@
           <div>
             <div class="flex items-center space-x-2 mb-4">
               <div
-                class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-xl"
+                class="w-10 h-10 bg-[#DC221C] rounded-full flex items-center justify-center font-bold text-xl"
               >
                 В
               </div>
@@ -797,9 +931,11 @@
         });
       });
       const header = document.querySelector("header");
+      const mainLogo = document.querySelector(".logo-block");
+      const scrollLogo = document.getElementById("scroll-logo");
 
       window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
+        if (window.scrollY > 80) {
           header.classList.add("header-scrolled");
         } else {
           header.classList.remove("header-scrolled");

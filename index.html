@@ -28,7 +28,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 50;
+    z-index: 100;
     background-color: white;
   }
 
@@ -40,7 +40,7 @@
     top: 60px; /* Если меню с бургером */
   }
   main {
-    padding-top: 3rem; /* Высота вашего фиксированного header */
+    padding-top: 2rem; /* Высота вашего фиксированного header */
   }
 }
 
@@ -130,19 +130,54 @@
         transform: translateX(0);
       }
       @font-face {
-        font-family: "Gilroy Bold";
-        src: url("/fonts/Gilroy-Bold.eot") format("eot"),
-             url("fonts/Gilroy-Bold.woff") format("woff");
-        font-weight: 900;
-        font-style: normal;
-      }
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
 
-      .font-gilroy-bold {
-        font-family: "Gilroy Bold", sans-serif;
-      }
-      .font-gilroy-regular{
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
 
-      }
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+      .font-gilroy-regular {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 400;
+}
+
+.font-gilroy-medium {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 500;
+}
+
+.font-gilroy-bold {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 700;
+}
+
+.font-gilroy-extrabold {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 800;
+}
+
       /* Анимация крестика */
       .burger-open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
@@ -276,7 +311,7 @@
     </header>
     <div
         id="mobile-menu"
-        class="fixed top-0 left-0 w-full h-full bg-white flex flex-col items-center justify-center space-y-6 text-xl transform -translate-x-full transition-transform duration-500 md:hidden z-40"
+        class="fixed top-0 left-0 w-full h-full bg-white flex flex-col font-gilroy-regular items-center justify-center space-y-6 text-xl transform -translate-x-full transition-transform duration-500 md:hidden z-40"
       >
         <a href="#home">Головна</a>
         <a href="#about">Про нас</a>

@@ -230,10 +230,10 @@
 
       <!-- Мобильное меню -->
       <div
-        class="md:hidden hidden bg-white w-full py-4 px-4 shadow-md"
         id="mobile-menu"
+        class="md:hidden max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out bg-white w-full px-4 shadow-md"
       >
-        <div class="flex flex-col space-y-3">
+        <div class="flex flex-col space-y-3 py-4">
           <a href="#home" class="py-2 border-b border-gray-100">Головна</a>
           <a href="#about" class="py-2 border-b border-gray-100">Про нас</a>
           <a href="#actions" class="py-2 border-b border-gray-100">Акції</a>
@@ -928,11 +928,33 @@
     <script>
       // Mobile menu toggle
       document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuButton = document.getElementById("mobile-menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
+        const button = document.getElementById("mobile-menu-button");
+        const menu = document.getElementById("mobile-menu");
 
-        mobileMenuButton.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
+        function openMenu() {
+          menu.classList.remove("max-h-0", "opacity-0");
+          menu.classList.add("max-h-screen", "opacity-100");
+        }
+
+        function closeMenu() {
+          menu.classList.remove("max-h-screen", "opacity-100");
+          menu.classList.add("max-h-0", "opacity-0");
+        }
+
+        button.addEventListener("click", () => {
+          if (menu.classList.contains("max-h-0")) {
+            openMenu();
+          } else {
+            closeMenu();
+          }
+        });
+
+        // Закрытие меню при переходе по ссылке
+        const links = menu.querySelectorAll("a");
+        links.forEach((link) => {
+          link.addEventListener("click", () => {
+            closeMenu();
+          });
         });
       });
       // Smooth scrolling for anchor links

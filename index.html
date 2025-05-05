@@ -22,12 +22,14 @@
         z-index: 40; /* или больше при необходимости */
       }
       @media (max-width: 768px) {
-  header {
+      
+    header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 50; /* Чтобы не перекрывал другой контент */
+    right: 0;
+    z-index: 50;
+    background-color: white;
   }
 
   .header-inner {
@@ -36,6 +38,9 @@
 
   #mobile-menu {
     top: 60px; /* Если меню с бургером */
+  }
+  main {
+    padding-top: 3rem; /* Высота вашего фиксированного header */
   }
 }
 
@@ -127,13 +132,16 @@
       @font-face {
         font-family: "Gilroy Bold";
         src: url("/fonts/Gilroy-Bold.eot") format("eot"),
-          url("fonts/Gilroy-Bold.woff") format("woff");
+             url("fonts/Gilroy-Bold.woff") format("woff");
         font-weight: 900;
         font-style: normal;
       }
 
       .font-gilroy-bold {
         font-family: "Gilroy Bold", sans-serif;
+      }
+      .font-gilroy-regular{
+
       }
       /* Анимация крестика */
       .burger-open span:nth-child(1) {
@@ -285,8 +293,11 @@
       >
         <!-- Левый блок с текстом -->
         <div class="md:w-1/2 text-left">
+          <h1 class="text-4xl md:text-6xl text-gray-600 font-gilroy-bold mb-6">
+            Громадський рух 
+          </h1>
           <h1 class="text-4xl md:text-6xl text-[#DC221C] font-gilroy-bold mb-6">
-            Громадський рух ВІДСІЧ
+           ВІДСІЧ
           </h1>
           <p
             class="text-xl md:text-2xl max-w-2xl mb-8 font-gilroy-bold text-gray-600"

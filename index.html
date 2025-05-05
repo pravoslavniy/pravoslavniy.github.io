@@ -21,28 +21,6 @@
         padding-bottom: 2rem;
         z-index: 40; /* или больше при необходимости */
       }
-      @media (max-width: 768px) {
-      
-    header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: white;
-  }
-
-  .header-inner {
-    padding-top: 20px; /* Отступ сверху, чтобы шапка не перекрывала контент */
-  }
-
-  #mobile-menu {
-    top: 40px; /* Если меню с бургером */
-  }
-  main {
-    padding-top: 2rem; /* Высота вашего фиксированного header */
-  }
-}
 
       .header-socials {
         position: absolute;
@@ -130,75 +108,57 @@
         transform: translateX(0);
       }
       @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/Gilroy-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
+        font-family: "Gilroy";
+        src: url("/fonts/Gilroy-Regular.woff") format("woff");
+        font-weight: 400;
+        font-style: normal;
+      }
 
-@font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/Gilroy-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
+      @font-face {
+        font-family: "Gilroy";
+        src: url("/fonts/Gilroy-Medium.woff") format("woff");
+        font-weight: 500;
+        font-style: normal;
+      }
 
-@font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/Gilroy-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
+      @font-face {
+        font-family: "Gilroy";
+        src: url("/fonts/Gilroy-Bold.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+      }
 
-@font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/Gilroy-ExtraBold.woff') format('woff');
-  font-weight: 800;
-  font-style: normal;
-}
-
+      @font-face {
+        font-family: "Gilroy";
+        src: url("/fonts/Gilroy-ExtraBold.woff") format("woff");
+        font-weight: 800;
+        font-style: normal;
+      }
 
       .font-gilroy-regular {
-  font-family: 'Gilroy', sans-serif;
-  font-weight: 400;
-}
+        font-family: "Gilroy", sans-serif;
+        font-weight: 400;
+      }
 
-.font-gilroy-medium {
-  font-family: 'Gilroy', sans-serif;
-  font-weight: 500;
-}
+      .font-gilroy-medium {
+        font-family: "Gilroy", sans-serif;
+        font-weight: 500;
+      }
 
-.font-gilroy-bold {
-  font-family: 'Gilroy', sans-serif;
-  font-weight: 700;
-}
+      .font-gilroy-bold {
+        font-family: "Gilroy", sans-serif;
+        font-weight: 700;
+      }
 
-.font-gilroy-extrabold {
-  font-family: 'Gilroy', sans-serif;
-  font-weight: 800;
-}
-
-      /* Анимация крестика */
-      .burger-open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.burger-open span:nth-child(2) {
-  opacity: 0;
-}
-.burger-open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
+      .font-gilroy-extrabold {
+        font-family: "Gilroy", sans-serif;
+        font-weight: 800;
+      }
     </style>
   </head>
   <body class="bg-white text-gray-900">
     <!-- Header -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
-    <header class="sz-50 bg-white shadow-sm transition-all duration-300 fixed w-full top-0 left-0 z-50 md:relative">
+    <header class="sz-50 bg-white shadow-sm transition-all duration-300">
       <div
         class="header-socials hidden md:flex absolute top-4 right-4 space-x-4 z-[100]"
       >
@@ -234,7 +194,6 @@
           />
         </a>
       </div>
-
       <div
         class="header-inner relative container mx-auto px-4 py-3 flex justify-between items-center"
       >
@@ -247,9 +206,8 @@
           />
         </div>
 
-        <!-- Главное меню -->
+        <!-- Меню и кнопка в одной строке, с отступом между ними -->
         <div class="flex items-center justify-between flex-grow ml-8">
-          <!-- Десктоп-меню -->
           <div
             class="main-nav-wrapper hidden md:flex justify-center w-full transition-all duration-300"
           >
@@ -267,6 +225,7 @@
                   />
                 </div>
               </a>
+
               <a href="#about" class="py-2 hover:text-[#DC221C] transition"
                 >Про нас</a
               >
@@ -287,55 +246,50 @@
                   Підтримати
                 </button>
               </div>
+              <div class="shrink-0 md:hidden">
+                <button id="mobile-menu-button">
+                  <i class="fas fa-bars text-xl"></i>
+                </button>
+              </div>
             </nav>
           </div>
-          <div class="md:hidden flex items-center ml-auto">
-          <div id="burger" class="md:hidden cursor-pointer z-50 relative w-6 h-5">
-            <span
-              class="absolute top-0 left-0 w-full h-0.5 bg-black transition-all duration-300"
-            ></span>
-            <span
-              class="absolute top-2 left-0 w-full h-0.5 bg-black transition-all duration-300"
-            ></span>
-            <span
-              class="absolute bottom-0 left-0 w-full h-0.5 bg-black transition-all duration-300"
-            ></span>
-          </div>
-        </div>
-          <!-- Кнопка для открытия мобильного меню -->
-          
-          </div>
         </div>
       </div>
 
-    </header>
-    <div
+      <!-- Mobile menu -->
+      <div
+        class="md:hidden hidden bg-white w-full py-4 px-4 shadow-md"
         id="mobile-menu"
-        class="fixed top-0 left-0 w-full h-full bg-white flex flex-col font-gilroy-regular items-center justify-center space-y-6 text-xl transform -translate-x-full transition-transform duration-500 md:hidden z-40"
       >
-        <a href="#home">Головна</a>
-        <a href="#about">Про нас</a>
-        <a href="#actions">Акції</a>
-        <a href="#media">Медіа</a>
-        <a href="#contact">Контакти</a>
+        <div class="flex flex-col space-y-3 font-gilroy-regular">
+          <a href="#home" class="py-2 border-b border-gray-100">Головна</a>
+          <a href="#about" class="py-2 border-b border-gray-100">Про нас</a>
+          <a href="#actions" class="py-2 border-b border-gray-100">Акції</a>
+          <a href="#media" class="py-2 border-b border-gray-100">Медіа</a>
+          <a href="#contact" class="py-2">Контакти</a>
+        </div>
       </div>
+    </header>
 
     <!-- Hero Section -->
-    <main class="pt-20">
     <section id="home" class="hero-bg py-2 md:py-2">
       <div
         class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between"
       >
         <!-- Левый блок с текстом -->
         <div class="md:w-1/2 text-left">
-          <h1 class="text-4xl md:text-7xl text-gray-600 font-gilroy-extrabold mb-6">
-            Громадський рух 
+          <h1
+            class="text-4xl md:text-6xl text-gray-600 font-gilroy-extrabold mb-6"
+          >
+            Громадський рух
           </h1>
-          <h1 class="text-4xl md:text-7xl text-[#DC221C] font-gilroy-extrabold mb-6">
-           ВІДСІЧ
+          <h1
+            class="text-4xl md:text-6xl text-[#DC221C] font-gilroy-extrabold mb-6"
+          >
+            ВІДСІЧ
           </h1>
           <p
-            class="text-xl md:text-2xl max-w-2xl mb-8 font-gilroy-regular text-gray-600"
+            class="text-xl md:text-2xl max-w-2xl mb-8 font-gilroy-bold text-gray-600"
           >
             Об'єднуємо зусилля для захисту прав людини, демократичних цінностей
             та протидії пропаганді
@@ -356,7 +310,6 @@
             </button>
           </div>
         </div>
-
         <!-- Модальное окно -->
         <div
           id="join-modal"
@@ -384,7 +337,10 @@
                 />
               </svg>
             </button>
-            <h2 class="text-2xl font-bold mb-4 text-[#DC221C]">Долучитися</h2>
+
+            <h2 class="text-2xl font-bold mb-4 text-[#DC221C]">
+              Записатись у Відсіч
+            </h2>
             <form id="join-form" class="space-y-4">
               <input
                 name="name"
@@ -437,7 +393,6 @@
         </div>
       </div>
     </section>
-    </main>
 
     <!-- Mission Section -->
     <section class="py-16 bg-gray-50">
@@ -496,7 +451,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16">
+    <!-- <section id="about" class="py-16">
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
@@ -532,7 +487,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Actions Section -->
     <section id="actions" class="py-16 bg-gray-50">
@@ -540,37 +495,51 @@
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-4">Наші акції та події</h2>
           <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-            Беріть участь у наших акціях та допомагайте створювати позитивні
+            Беріть участь у наших подіях та допомагайте створювати позитивні
             зміни у суспільстві
           </p>
         </div>
+        <div id="fb-root"></div>
+        <script
+          async
+          defer
+          crossorigin="anonymous"
+          src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v22.0"
+        ></script>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Новый блок с постом Facebook -->
           <div
             class="bg-white rounded-lg overflow-hidden shadow-md news-card transition duration-300"
           >
-            <img
-              src="https://images.unsplash.com/photo-1529107386315-e1c2e26d10d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
-              alt="Action 1"
-              class="w-full h-48 object-cover"
-            />
             <div class="p-6">
-              <div class="flex justify-between items-center mb-2">
-                <span class="text-sm text-[#DC221C] font-medium"
-                  >15 червня 2023</span
+              <img
+                src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                alt="Action 2"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-sm text-[#DC221C] font-medium"
+                    >22 червня 2023</span
+                  >
+                  <span class="text-xs bg-gray-100 px-2 py-1 rounded"
+                    >Онлайн</span
+                  >
+                </div>
+                <h3 class="text-xl font-semibold mb-3">
+                  Вебінар: Як розпізнати пропаганду
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Практичні поради з виявлення маніпуляцій та дезінформації в
+                  медіа.
+                </p>
+                <button
+                  class="text-[#DC221C] font-medium hover:text-yellow-700 transition"
                 >
-                <span class="text-xs bg-gray-100 px-2 py-1 rounded">Київ</span>
+                  Детальніше →
+                </button>
               </div>
-              <h3 class="text-xl font-semibold mb-3">Марш за демократію</h3>
-              <p class="text-gray-600 mb-4">
-                Масова акція на підтримку демократичних цінностей та
-                європейського майбутнього України.
-              </p>
-              <button
-                class="text-[#DC221C] font-medium hover:text-yellow-700 transition"
-              >
-                Детальніше →
-              </button>
             </div>
           </div>
 
@@ -653,7 +622,7 @@
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-4">Медіа</h2>
           <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-            Фото та відео з наших заходів та акцій
+            Фото та відео з наших заходів
           </p>
         </div>
 
@@ -727,7 +696,7 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="py-16 bg-black text-white">
+    <!-- <section class="py-16 bg-black text-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto text-center">
           <h2 class="text-3xl font-bold mb-4">Підпишіться на нашу розсилку</h2>
@@ -751,7 +720,7 @@
           </form>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-50">
@@ -1011,21 +980,13 @@
     <script>
       // Mobile menu toggle
       document.addEventListener("DOMContentLoaded", function () {
-    const burger = document.getElementById("burger");
-    const menu = document.getElementById("mobile-menu");
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
 
-    burger.addEventListener("click", () => {
-      burger.classList.toggle("burger-open");
-      menu.classList.toggle("-translate-x-full");
-    });
-
-    menu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        burger.classList.remove("burger-open");
-        menu.classList.add("-translate-x-full");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
       });
-    });
-  });
 
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

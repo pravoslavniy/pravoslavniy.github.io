@@ -110,16 +110,13 @@
       @font-face {
         font-family: "Gilroy Bold";
         src: url("/fonts/Gilroy-Bold.eot") format("eot"),
-          url("/fonts/Gilroy-Bold.woff") format("woff");
+          url("fonts/Gilroy-Bold.woff") format("woff");
         font-weight: 900;
         font-style: normal;
       }
 
       .font-gilroy-bold {
         font-family: "Gilroy Bold", sans-serif;
-      }
-      .font-gilroy-extrabold {
-        font-family: "Gilroy Extrabold", sans-serif;
       }
     </style>
   </head>
@@ -237,7 +234,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg py-8 md:py-16">
+    <section id="home" class="hero-bg py-2 md:py-2">
       <div
         class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between"
       >
@@ -256,6 +253,7 @@
             class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4"
           >
             <button
+              id="open-form"
               class="bg-[#DC221C] font-gilroy-bold text-white px-6 py-3 rounded hover:bg-[#BF2121] transition"
             >
               Долучитися
@@ -265,6 +263,54 @@
             >
               Дізнатися більше
             </button>
+          </div>
+        </div>
+        <!-- Модальное окно -->
+        <div
+          id="join-modal"
+          class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+        >
+          <div class="bg-white rounded-lg w-full max-w-md p-6">
+            <h2 class="text-2xl font-bold mb-4 text-[#DC221C]">Долучитися</h2>
+            <form id="join-form" class="space-y-4">
+              <input
+                name="name"
+                type="text"
+                placeholder="ПІБ"
+                required
+                class="w-full border px-3 py-2 rounded"
+              />
+              <input
+                name="email"
+                type="email"
+                placeholder="Email (по можливості)"
+                class="w-full border px-3 py-2 rounded"
+              />
+              <input
+                name="phone"
+                type="text"
+                placeholder="Контактний телефон"
+                class="w-full border px-3 py-2 rounded"
+              />
+              <textarea
+                name="notes"
+                placeholder="Примітки"
+                class="w-full border px-3 py-2 rounded"
+              ></textarea>
+              <button
+                type="submit"
+                class="bg-[#DC221C] text-white px-6 py-2 rounded hover:bg-[#BF2121]"
+              >
+                Надіслати
+              </button>
+            </form>
+            <p id="form-success" class="mt-4 text-green-600 font-bold hidden">
+              Дякуємо за заповнення! Повернемося до вас з відповіддю незабаром
+            </p>
+            <button
+              id="close-form"
+              class="mt-4 text-sm text-blue-600 hover:underline"
+            ></button>
           </div>
         </div>
 
@@ -907,82 +953,62 @@
           header.classList.remove("header-scrolled");
         }
       });
-      document
-        .querySelector('button:contains("Долучитися")')
-        ?.addEventListener("click", () => {
-          document.getElementById("joinModal").classList.remove("hidden");
+      // Google Apps Script Web App URL (заменим позже)
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const openBtn = document.getElementById("open-form");
+        const modal = document.getElementById("join-modal");
+        const form = document.getElementById("join-form");
+        const success = document.getElementById("form-success");
+        const closeBtn = document.getElementById("close-form");
+
+        // Открытие модального окна
+        openBtn.addEventListener("click", () => {
+          modal.classList.remove("hidden");
         });
 
-      document.getElementById("closeModal").addEventListener("click", () => {
-        document.getElementById("joinModal").classList.add("hidden");
-      });
+        // Закрытие модального окна при нажатии на кнопку "Закрыть"
+        closeBtn.addEventListener("click", () => {
+          modal.classList.add("hidden");
+        });
 
-      // Google Apps Script Web App URL (заменим позже)
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbymYo1AZ5cuXV-WnVXLJ6W-p3_qNaFsopXoEG01txpDi5As4Ec1JrZSYIXaa41cskw5/exec";
+        // Валидация формы перед отправкой
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault(); // Предотвращаем стандартную отправку формы
 
-      document.getElementById("joinForm").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
+          const name = form.name.value.trim();
+          const email = form.email.value.trim();
+          const phone = form.phone.value.trim();
+          const notes = form.notes.value.trim();
 
-        fetch(scriptURL, { method: "POST", body: formData })
-          .then(() => {
-            form.classList.add("hidden");
-            document.getElementById("thanksMessage").classList.remove("hidden");
-          })
-          .catch((error) => alert("Помилка: " + error.message));
+          // Проверка, что все обязательные поля заполнены
+          if (!name || !email) {
+            alert("Пожалуйста, заполните все обязательные поля!");
+            return;
+          }
+
+          // Сбор данных формы
+          const formData = new FormData(form);
+
+          // Отправка данных на сервер (Google Apps Script)
+          const response = await fetch(
+            "https://script.google.com/macros/s/AKfycbymYo1AZ5cuXV-WnVXLJ6W-p3_qNaFsopXoEG01txpDi5As4Ec1JrZSYIXaa41cskw5/exec",
+            {
+              method: "POST",
+              body: formData,
+            }
+          );
+
+          if (response.ok) {
+            form.reset(); // Очищаем форму
+            form.classList.add("hidden"); // Скрываем форму
+            success.classList.remove("hidden"); // Показываем сообщение об успешной отправке
+          } else {
+            alert("Сталася помилка. Спробуйте ще раз.");
+          }
+        });
       });
     </script>
     <!-- Модальное окно -->
-    <div
-      id="joinModal"
-      class="fixed inset-0 bg-black bg-opacity-50 z-[1000] hidden justify-center items-center"
-    >
-      <div class="bg-white p-8 rounded-xl max-w-md w-full relative">
-        <button id="closeModal" class="absolute top-2 right-4 text-xl">
-          &times;
-        </button>
-        <h2 class="text-2xl font-gilroy-bold mb-4 text-[#DC221C]">
-          Заповніть форму
-        </h2>
-        <form id="joinForm" class="space-y-4">
-          <input
-            type="text"
-            name="name"
-            placeholder="Прізвище, ім’я"
-            required
-            class="w-full border px-4 py-2 rounded"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email (якщо маєте)"
-            class="w-full border px-4 py-2 rounded"
-          />
-          <input
-            type="text"
-            name="phone"
-            placeholder="Контактний телефон"
-            required
-            class="w-full border px-4 py-2 rounded"
-          />
-          <textarea
-            name="notes"
-            placeholder="Примітки (можна не заповнювати)"
-            class="w-full border px-4 py-2 rounded"
-          ></textarea>
-          <button
-            type="submit"
-            class="w-full bg-[#DC221C] text-white py-2 rounded hover:bg-[#BF2121] transition"
-          >
-            Відправити
-          </button>
-        </form>
-        <div id="thanksMessage" class="hidden mt-4 text-green-600 font-bold">
-          Дякуємо за заповнення! Повернемося до вас з відповіддю незабаром.
-        </div>
-      </div>
-    </div>
   </body>
 </html>

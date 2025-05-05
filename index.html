@@ -21,6 +21,23 @@
         padding-bottom: 2rem;
         z-index: 40; /* или больше при необходимости */
       }
+      @media (max-width: 768px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50; /* Чтобы не перекрывал другой контент */
+  }
+
+  .header-inner {
+    padding-top: 20px; /* Отступ сверху, чтобы шапка не перекрывала контент */
+  }
+
+  #mobile-menu {
+    top: 60px; /* Если меню с бургером */
+  }
+}
 
       .header-socials {
         position: absolute;
@@ -120,14 +137,15 @@
       }
       /* Анимация крестика */
       .burger-open span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-      .burger-open span:nth-child(2) {
-        opacity: 0;
-      }
-      .burger-open span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-      }
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger-open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
     </style>
   </head>
   <body class="bg-white text-gray-900">
@@ -228,29 +246,25 @@
               </div>
             </nav>
           </div>
-
+          <div id="burger" class="md:hidden cursor-pointer z-50 relative w-6 h-5">
+            <span
+              class="absolute top-0 left-0 w-full h-0.5 bg-black transition-all duration-300"
+            ></span>
+            <span
+              class="absolute top-2 left-0 w-full h-0.5 bg-black transition-all duration-300"
+            ></span>
+            <span
+              class="absolute bottom-0 left-0 w-full h-0.5 bg-black transition-all duration-300"
+            ></span>
+          </div>
           <!-- Кнопка для открытия мобильного меню -->
           
           </div>
         </div>
       </div>
 
-      <!-- Мобильное меню -->
-      <!-- Burger Button -->
-      <div id="burger" class="md:hidden cursor-pointer z-50 relative w-6 h-5">
-        <span
-          class="absolute top-0 left-0 w-full h-0.5 bg-black transition-all duration-300"
-        ></span>
-        <span
-          class="absolute top-2 left-0 w-full h-0.5 bg-black transition-all duration-300"
-        ></span>
-        <span
-          class="absolute bottom-0 left-0 w-full h-0.5 bg-black transition-all duration-300"
-        ></span>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div
+    </header>
+    <div
         id="mobile-menu"
         class="fixed top-0 left-0 w-full h-full bg-white flex flex-col items-center justify-center space-y-6 text-xl transform -translate-x-full transition-transform duration-500 md:hidden z-40"
       >
@@ -260,7 +274,6 @@
         <a href="#media">Медіа</a>
         <a href="#contact">Контакти</a>
       </div>
-    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero-bg py-2 md:py-2">
@@ -947,22 +960,21 @@
     <script>
       // Mobile menu toggle
       document.addEventListener("DOMContentLoaded", function () {
-        const burger = document.getElementById("burger");
-        const menu = document.getElementById("mobile-menu");
+    const burger = document.getElementById("burger");
+    const menu = document.getElementById("mobile-menu");
 
-        burger.addEventListener("click", () => {
-          burger.classList.toggle("burger-open");
-          menu.classList.toggle("-translate-x-full");
-        });
+    burger.addEventListener("click", () => {
+      burger.classList.toggle("burger-open");
+      menu.classList.toggle("-translate-x-full");
+    });
 
-        // Закрытие меню по ссылке
-        menu.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", () => {
-            burger.classList.remove("burger-open");
-            menu.classList.add("-translate-x-full");
-          });
-        });
+    menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        burger.classList.remove("burger-open");
+        menu.classList.add("-translate-x-full");
       });
+    });
+  });
 
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

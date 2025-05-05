@@ -992,12 +992,11 @@
 
           // Прокси-сервер для обхода CORS
 
-          const targetUrl =
-            "https://script.google.com/macros/s/AKfycbymYo1AZ5cuXV-WnVXLJ6W-p3_qNaFsopXoEG01txpDi5As4Ec1JrZSYIXaa41cskw5/exec"; // URL вашего Google Apps Script
-
-          // Отправка данных на сервер (с использованием прокси)
           const response = await fetch(
-            "https://cors-proxy-nu-liard.vercel.app",
+            "https://cors-proxy-nu-liard.vercel.app/api/proxy?url=" +
+              encodeURIComponent(
+                "https://script.google.com/macros/s/AKfycbymYo1AZ5cuXV-WnVXLJ6W-p3_qNaFsopXoEG01txpDi5As4Ec1JrZSYIXaa41cskw5/exec"
+              ),
             {
               method: "POST",
               headers: {

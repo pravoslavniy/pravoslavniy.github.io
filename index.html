@@ -237,7 +237,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg py-10 md:py-16">
+    <section id="home" class="hero-bg py-8 md:py-16">
       <div
         class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between"
       >
@@ -907,6 +907,82 @@
           header.classList.remove("header-scrolled");
         }
       });
+      document
+        .querySelector('button:contains("Долучитися")')
+        ?.addEventListener("click", () => {
+          document.getElementById("joinModal").classList.remove("hidden");
+        });
+
+      document.getElementById("closeModal").addEventListener("click", () => {
+        document.getElementById("joinModal").classList.add("hidden");
+      });
+
+      // Google Apps Script Web App URL (заменим позже)
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbymYo1AZ5cuXV-WnVXLJ6W-p3_qNaFsopXoEG01txpDi5As4Ec1JrZSYIXaa41cskw5/exec";
+
+      document.getElementById("joinForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        fetch(scriptURL, { method: "POST", body: formData })
+          .then(() => {
+            form.classList.add("hidden");
+            document.getElementById("thanksMessage").classList.remove("hidden");
+          })
+          .catch((error) => alert("Помилка: " + error.message));
+      });
     </script>
+    <!-- Модальное окно -->
+    <div
+      id="joinModal"
+      class="fixed inset-0 bg-black bg-opacity-50 z-[1000] hidden justify-center items-center"
+    >
+      <div class="bg-white p-8 rounded-xl max-w-md w-full relative">
+        <button id="closeModal" class="absolute top-2 right-4 text-xl">
+          &times;
+        </button>
+        <h2 class="text-2xl font-gilroy-bold mb-4 text-[#DC221C]">
+          Заповніть форму
+        </h2>
+        <form id="joinForm" class="space-y-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Прізвище, ім’я"
+            required
+            class="w-full border px-4 py-2 rounded"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email (якщо маєте)"
+            class="w-full border px-4 py-2 rounded"
+          />
+          <input
+            type="text"
+            name="phone"
+            placeholder="Контактний телефон"
+            required
+            class="w-full border px-4 py-2 rounded"
+          />
+          <textarea
+            name="notes"
+            placeholder="Примітки (можна не заповнювати)"
+            class="w-full border px-4 py-2 rounded"
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full bg-[#DC221C] text-white py-2 rounded hover:bg-[#BF2121] transition"
+          >
+            Відправити
+          </button>
+        </form>
+        <div id="thanksMessage" class="hidden mt-4 text-green-600 font-bold">
+          Дякуємо за заповнення! Повернемося до вас з відповіддю незабаром.
+        </div>
+      </div>
+    </div>
   </body>
 </html>

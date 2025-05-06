@@ -77,9 +77,11 @@
         padding-bottom: 0.5rem;
       }
 
-      .header-scrolled .logo-block {
-        transform: translateY(-200%);
-        transition: all 0.5s ease;
+      @media (min-width: 768px) {
+        .header-scrolled .logo-block {
+          transform: translateY(-200%);
+          transition: all 0.5s ease;
+        }
       }
 
       .main-nav {
@@ -330,7 +332,7 @@
         <img
           src="img/png/birds-mobile.png"
           alt="Птахи мобільна версія"
-          class="block md:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[600px] opacity-100 pointer-events-none z-10"
+          class="block md:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[450px] opacity-100 pointer-events-none z-10"
         />
         <div class="absolute inset-0 z-0 animate-bg-scrolling bg-pattern"></div>
 
@@ -1101,10 +1103,12 @@
       const scrollLogo = document.getElementById("scroll-logo");
 
       window.addEventListener("scroll", () => {
-        if (window.scrollY > 80) {
-          header.classList.add("header-scrolled");
-        } else {
-          header.classList.remove("header-scrolled");
+        if (window.innerWidth >= 768) {
+          if (window.scrollY > 80) {
+            header.classList.add("header-scrolled");
+          } else {
+            header.classList.remove("header-scrolled");
+          }
         }
       });
       // Google Apps Script Web App URL (заменим позже)

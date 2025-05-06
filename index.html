@@ -188,6 +188,23 @@
       .burger-open span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
       }
+      @media (min-width: 768px) and (orientation: landscape) {
+        .birds-desktop {
+          display: block !important;
+        }
+        .birds-mobile {
+          display: none !important;
+        }
+      }
+
+      @media (max-width: 767px), (orientation: portrait) {
+        .birds-desktop {
+          display: none !important;
+        }
+        .birds-mobile {
+          display: block !important;
+        }
+      }
     </style>
   </head>
   <body class="bg-white text-gray-900">
@@ -329,12 +346,12 @@
         <img
           src="img/png/birds-1.png"
           alt="Птахи"
-          class="hidden max-[1024px]:hidden block absolute bottom-0 left-1/2 transform -translate-x-[55%] w-[1200px] opacity-100 pointer-events-none z-10"
+          class="absolute bottom-0 left-1/2 transform -translate-x-[55%] w-[1200px] opacity-100 pointer-events-none z-10 hidden md-birds:block"
         />
         <img
           src="img/png/birds-mobile-1.png"
           alt="Птахи мобільна версія"
-          class="block max-[1024px]:block hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[450px] opacity-100 pointer-events-none z-10"
+          class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[450px] opacity-100 pointer-events-none z-10 block md-birds:hidden"
         />
         <div class="absolute inset-0 z-0 animate-bg-scrolling bg-pattern"></div>
 

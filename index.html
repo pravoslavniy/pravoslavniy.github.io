@@ -258,7 +258,7 @@
       >
         <!-- Логотип -->
         <div
-          class="logo-block transition-all duration-500 lg:group-[.header-scrolled]:-translate-y-[200%]"
+          class="logo-block transition-all duration-500 lg:group-[.header-scrolled]:-translate-y-[200%] ml-20"
         >
           <img
             src="img/svg/new-logo.svg"
@@ -347,7 +347,7 @@
           id="birds-desktop"
           src="img/png/birds-1.png"
           alt="Птахи"
-          class="absolute bottom-0 left-1/2 transform -translate-x-[55%] w-[1200px] opacity-100 pointer-events-none z-10"
+          class="absolute bottom-0 left-1/2 transform -translate-x-[52%] w-[1330px] opacity-100 pointer-events-none z-10"
         />
         <img
           id="birds-mobile"
@@ -365,20 +365,20 @@
           <!-- Левый блок с текстом -->
           <div class="lg:w-1/2 w-full max-w-[450px] text-left">
             <h1
-              class="text-4xl lg:text-6xl text-gray-200 font-gilroy-extrabold mb-6"
+              class="text-4xl lg:text-6xl text-gray-200 font-gilroy-extrabold mb-5"
             >
-              Громадський рух
+              Громадська організація
             </h1>
             <h1
               class="text-4xl lg:text-6xl text-[#DC221C] font-gilroy-extrabold mb-6"
             >
-              ВІДСІЧ
+              Васильківська ВІДСІЧ
             </h1>
             <p
               class="text-xl lg:text-2xl max-w-2xl mb-8 font-gilroy-regular text-gray-300"
             >
               Об'єднуємо зусилля для захисту прав людини, демократичних
-              цінностей та протидії пропаганді
+              цінностей та протидіємо пропаганді
             </p>
             <div class="flex justify-start">
               <button
@@ -1200,20 +1200,20 @@
         });
       });
       function toggleBirdsBanner() {
-    const desktop = document.getElementById("birds-desktop");
-    const mobile = document.getElementById("birds-mobile");
+        const desktop = document.getElementById("birds-desktop");
+        const mobile = document.getElementById("birds-mobile");
 
-    if (window.innerWidth >= 1024) {
-      desktop.style.display = "block";
-      mobile.style.display = "none";
-    } else {
-      desktop.style.display = "none";
-      mobile.style.display = "block";
-    }
-  }
+        if (window.innerWidth >= 1024) {
+          desktop.style.display = "block";
+          mobile.style.display = "none";
+        } else {
+          desktop.style.display = "none";
+          mobile.style.display = "block";
+        }
+      }
 
-  toggleBirdsBanner(); // начальная проверка
-  window.addEventListener("resize", toggleBirdsBanner); // при изменении размера
+      toggleBirdsBanner(); // начальная проверка
+      window.addEventListener("resize", toggleBirdsBanner); // при изменении размера
     </script>
     <!-- Модальное окно -->
   </body>

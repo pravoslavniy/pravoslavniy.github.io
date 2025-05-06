@@ -329,25 +329,22 @@
         <img
           src="img/png/birds-1.png"
           alt="Птахи"
-          class="hidden lg:block absolute bottom-0 left-1/2 transform -translate-x-[55%] w-[1200px] max-w-none opacity-100 pointer-events-none z-10"
+          class="hidden max-[1024px]:hidden block absolute bottom-0 left-1/2 transform -translate-x-[55%] w-[1200px] opacity-100 pointer-events-none z-10"
         />
-
-        <!-- Мобильные: птицы -->
         <img
           src="img/png/birds-mobile-1.png"
           alt="Птахи мобільна версія"
-          class="block lg:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[500px] opacity-100 pointer-events-none z-10"
+          class="block max-[1024px]:block hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[450px] opacity-100 pointer-events-none z-10"
         />
-
-        <!-- Фон под анимацию -->
         <div class="absolute inset-0 z-0 animate-bg-scrolling bg-pattern"></div>
 
-        <!-- Контент поверх -->
+        <!-- Контейнер с контентом и birds.png -->
+
         <div
-          class="relative z-10 max-w-screen-xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between"
+          class="relative z-10 w-full max-w-screen-xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between"
         >
-          <!-- Текст -->
-          <div class="w-full lg:w-1/2 text-left">
+          <!-- Левый блок с текстом -->
+          <div class="lg:w-1/2 w-full max-w-[450px] text-left">
             <h1
               class="text-4xl lg:text-6xl text-gray-200 font-gilroy-extrabold mb-6"
             >
@@ -359,7 +356,7 @@
               ВІДСІЧ
             </h1>
             <p
-              class="text-xl lg:text-2xl max-w-xl mb-8 font-gilroy-regular text-gray-300"
+              class="text-xl lg:text-2xl max-w-2xl mb-8 font-gilroy-regular text-gray-300"
             >
               Об'єднуємо зусилля для захисту прав людини, демократичних
               цінностей та протидії пропаганді
@@ -445,11 +442,11 @@
           </div>
 
           <!-- Правый блок с баннером -->
-          <div class="w-full lg:w-1/2 mt-10 lg:mt-0 flex justify-center">
+          <div class="lg:w-1/2 mt-10 lg:mt-0 flex justify-center">
             <img
               src="img/png/banner-Cossack.png"
               alt="Козак"
-              class="w-[260px] sm:w-[300px] md:w-[350px] lg:w-[500px] h-auto object-contain"
+              class="w-[300px] lg:w-[400px] lg:w-[500px] h-auto object-contain"
             />
           </div>
         </div>

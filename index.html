@@ -198,7 +198,7 @@
     />
 
     <header
-      class="bg-white shadow-sm transition-all duration-300 w-full top-0 left-0 z-50 fixed md:relative md:static"
+      class="fixed md:relative top-0 left-0 w-full bg-white z-50 transition-all duration-300"
     >
       <div
         class="header-socials hidden md:flex absolute top-4 right-4 space-x-4 z-[100]"
@@ -240,7 +240,9 @@
         class="header-inner relative container mx-auto px-4 py-3 flex justify-between items-center"
       >
         <!-- Логотип -->
-        <div class="logo-block flex items-center transition-all duration-300">
+        <div
+          class="logo-block transition-all duration-500 md:group-[.header-scrolled]:-translate-y-[200%]"
+        >
           <img
             src="img/svg/new-logo.svg"
             alt="Логотип ВІДСІЧ"

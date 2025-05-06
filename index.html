@@ -196,6 +196,10 @@
         #birds-mobile {
           display: none !important;
         }
+        .hero-bg {
+          padding-bottom: 220px;
+        }
+
         .hero-content {
           flex-direction: column !important;
           align-items: center !important;
@@ -204,11 +208,11 @@
         }
 
         .hero-text {
-          max-width: 90vw;
+          max-width: 90%;
         }
 
         .hero-button {
-          justify-content: center;
+          justify-content: center !important;
         }
       }
 
@@ -358,18 +362,18 @@
 
     <!-- Hero Section -->
     <main class="pt-[80px] lg:pt-0">
-      <section id="home" class="relative hero-bg py-2 overflow-hidden">
+      <section id="home" class="hero-bg py-2 pb-[200px] lg:pb-[260px]">
         <img
           id="birds-desktop"
           src="img/png/birds-1.png"
           alt="Птахи"
-          class="hidden lg:block absolute bottom-0 left-1/2 transform -translate-x-[52%] w-[1330px] pointer-events-none z-10"
+          class="hidden lg:block absolute bottom-0 left-1/2 transform -translate-x-[52%] w-[1330px] pointer-events-none z-[-1]"
         />
         <img
           id="birds-mobile"
           src="img/png/birds-mobile-1.png"
           alt="Птахи мобільна версія"
-          class="block lg:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[450px] pointer-events-none z-10"
+          class="block lg:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[450px] pointer-events-none z-[-1]"
         />
         <div class="absolute inset-0 z-0 animate-bg-scrolling bg-pattern"></div>
 
@@ -379,9 +383,7 @@
           class="relative z-10 w-full max-w-screen-xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between hero-content"
         >
           <!-- Левый блок с текстом -->
-          <div
-            class="lg:w-1/2 w-full max-w-[450px] text-left hero-text text-center"
-          >
+          <div class="lg:w-1/2 w-full max-w-[450px] text-left hero-text">
             <h1
               class="text-4xl lg:text-6xl text-gray-200 font-gilroy-extrabold mb-5"
             >

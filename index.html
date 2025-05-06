@@ -188,20 +188,36 @@
       .burger-open span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
       }
-      @media (min-width: 768px) and (orientation: landscape) {
-        .birds-desktop {
+      /* Показывать десктопную версию birds при landscape */
+      @media (orientation: landscape) and (max-width: 1023px) {
+        #birds-desktop {
           display: block !important;
         }
-        .birds-mobile {
+        #birds-mobile {
           display: none !important;
+        }
+        .hero-content {
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center !important;
+          padding-top: 2rem;
+        }
+
+        .hero-text {
+          max-width: 90vw;
+        }
+
+        .hero-button {
+          justify-content: center;
         }
       }
 
-      @media (max-width: 767px), (orientation: portrait) {
-        .birds-desktop {
+      /* Скрыть десктопную птицу на обычном мобильном (портретном) */
+      @media (orientation: portrait) and (max-width: 1023px) {
+        #birds-desktop {
           display: none !important;
         }
-        .birds-mobile {
+        #birds-mobile {
           display: block !important;
         }
       }
@@ -342,28 +358,28 @@
 
     <!-- Hero Section -->
     <main class="pt-[80px] lg:pt-0">
-      <section id="home" class="hero-bg py-2 lg:py-2">
+      <section id="home" class="relative hero-bg py-2 overflow-hidden">
         <img
           id="birds-desktop"
           src="img/png/birds-1.png"
           alt="Птахи"
-          class="absolute bottom-0 left-1/2 transform -translate-x-[52%] w-[1330px] opacity-100 pointer-events-none z-10"
+          class="hidden lg:block absolute bottom-0 left-1/2 transform -translate-x-[52%] w-[1330px] pointer-events-none z-10"
         />
         <img
           id="birds-mobile"
           src="img/png/birds-mobile-1.png"
           alt="Птахи мобільна версія"
-          class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[450px] opacity-100 pointer-events-none z-10"
+          class="block lg:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[450px] pointer-events-none z-10"
         />
         <div class="absolute inset-0 z-0 animate-bg-scrolling bg-pattern"></div>
 
         <!-- Контейнер с контентом и birds.png -->
 
         <div
-          class="relative z-10 w-full max-w-screen-xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between"
+          class="relative z-10 w-full max-w-screen-xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between hero-content"
         >
           <!-- Левый блок с текстом -->
-          <div class="lg:w-1/2 w-full max-w-[450px] text-left">
+          <div class="lg:w-1/2 w-full max-w-[450px] text-left hero-text">
             <h1
               class="text-4xl lg:text-6xl text-gray-200 font-gilroy-extrabold mb-5"
             >
@@ -380,7 +396,7 @@
               Об'єднуємо зусилля для захисту прав людини, демократичних
               цінностей та протидіємо пропаганді
             </p>
-            <div class="flex justify-start">
+            <div class="flex justify-start hero-button">
               <button
                 id="open-form"
                 class="bg-[#DC221C] font-gilroy-bold text-white px-8 py-4 rounded-full text-lg hover:bg-[#BF2121] transition"

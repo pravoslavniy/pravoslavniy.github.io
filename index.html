@@ -22,27 +22,26 @@
         z-index: 40; /* или больше при необходимости */
       }
       @media (max-width: 768px) {
-      
-    header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: white;
-  }
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          background-color: white;
+        }
 
-  .header-inner {
-    padding-top: 20px; /* Отступ сверху, чтобы шапка не перекрывала контент */
-  }
+        .header-inner {
+          padding-top: 20px; /* Отступ сверху, чтобы шапка не перекрывала контент */
+        }
 
-  #mobile-menu {
-    top: 40px; /* Если меню с бургером */
-  }
-  main {
-    padding-top: 2rem; /* Высота вашего фиксированного header */
-  }
-}
+        #mobile-menu {
+          top: 40px; /* Если меню с бургером */
+        }
+        main {
+          padding-top: 2rem; /* Высота вашего фиксированного header */
+        }
+      }
 
       .header-socials {
         position: absolute;
@@ -130,65 +129,63 @@
         transform: translateX(0);
       }
       @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/Gilroy-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
+        font-family: "Gilroy";
+        src: url("/fonts/Gilroy-Regular.woff") format("woff");
+        font-weight: 400;
+        font-style: normal;
+      }
 
-@font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/Gilroy-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
+      @font-face {
+        font-family: "Gilroy";
+        src: url("/fonts/Gilroy-Medium.woff") format("woff");
+        font-weight: 500;
+        font-style: normal;
+      }
 
-@font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/Gilroy-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
+      @font-face {
+        font-family: "Gilroy";
+        src: url("/fonts/Gilroy-Bold.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+      }
 
-@font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/Gilroy-ExtraBold.woff') format('woff');
-  font-weight: 800;
-  font-style: normal;
-}
-
+      @font-face {
+        font-family: "Gilroy";
+        src: url("/fonts/Gilroy-ExtraBold.woff") format("woff");
+        font-weight: 800;
+        font-style: normal;
+      }
 
       .font-gilroy-regular {
-  font-family: 'Gilroy', sans-serif;
-  font-weight: 400;
-}
+        font-family: "Gilroy", sans-serif;
+        font-weight: 400;
+      }
 
-.font-gilroy-medium {
-  font-family: 'Gilroy', sans-serif;
-  font-weight: 500;
-}
+      .font-gilroy-medium {
+        font-family: "Gilroy", sans-serif;
+        font-weight: 500;
+      }
 
-.font-gilroy-bold {
-  font-family: 'Gilroy', sans-serif;
-  font-weight: 700;
-}
+      .font-gilroy-bold {
+        font-family: "Gilroy", sans-serif;
+        font-weight: 700;
+      }
 
-.font-gilroy-extrabold {
-  font-family: 'Gilroy', sans-serif;
-  font-weight: 800;
-}
+      .font-gilroy-extrabold {
+        font-family: "Gilroy", sans-serif;
+        font-weight: 800;
+      }
 
       /* Анимация крестика */
       .burger-open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.burger-open span:nth-child(2) {
-  opacity: 0;
-}
-.burger-open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .burger-open span:nth-child(2) {
+        opacity: 0;
+      }
+      .burger-open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
     </style>
   </head>
   <body class="bg-white text-gray-900">
@@ -198,7 +195,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <header class="sz-50 bg-white shadow-sm transition-all duration-300 fixed w-full top-0 left-0 z-50 md:relative">
+    <header
+      class="sz-50 bg-white shadow-sm transition-all duration-300 fixed w-full top-0 left-0 z-50 md:relative"
+    >
       <div
         class="header-socials hidden md:flex absolute top-4 right-4 space-x-4 z-[100]"
       >
@@ -290,153 +289,159 @@
             </nav>
           </div>
           <div class="md:hidden flex items-center ml-auto">
-          <div id="burger" class="md:hidden cursor-pointer z-50 relative w-6 h-5">
-            <span
-              class="absolute top-0 left-0 w-full h-0.5 bg-black transition-all duration-300"
-            ></span>
-            <span
-              class="absolute top-2 left-0 w-full h-0.5 bg-black transition-all duration-300"
-            ></span>
-            <span
-              class="absolute bottom-0 left-0 w-full h-0.5 bg-black transition-all duration-300"
-            ></span>
+            <div
+              id="burger"
+              class="md:hidden cursor-pointer z-50 relative w-6 h-5"
+            >
+              <span
+                class="absolute top-0 left-0 w-full h-0.5 bg-black transition-all duration-300"
+              ></span>
+              <span
+                class="absolute top-2 left-0 w-full h-0.5 bg-black transition-all duration-300"
+              ></span>
+              <span
+                class="absolute bottom-0 left-0 w-full h-0.5 bg-black transition-all duration-300"
+              ></span>
+            </div>
           </div>
-        </div>
           <!-- Кнопка для открытия мобильного меню -->
-          
-          </div>
         </div>
       </div>
-
     </header>
     <div
-        id="mobile-menu"
-        class="fixed top-0 left-0 w-full h-full bg-white flex flex-col font-gilroy-regular items-center justify-center space-y-6 text-xl transform -translate-x-full transition-transform duration-500 md:hidden z-40"
-      >
-        <a href="#home">Головна</a>
-        <a href="#about">Про нас</a>
-        <a href="#actions">Акції</a>
-        <a href="#media">Медіа</a>
-        <a href="#contact">Контакти</a>
-      </div>
+      id="mobile-menu"
+      class="fixed top-0 left-0 w-full h-full bg-white flex flex-col font-gilroy-regular items-center justify-center space-y-6 text-xl transform -translate-x-full transition-transform duration-500 md:hidden z-40"
+    >
+      <a href="#home">Головна</a>
+      <a href="#about">Про нас</a>
+      <a href="#actions">Акції</a>
+      <a href="#media">Медіа</a>
+      <a href="#contact">Контакти</a>
+    </div>
 
     <!-- Hero Section -->
     <main class="pt-20">
-    <section id="home" class="hero-bg py-2 md:py-2">
-      <div
-        class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between"
-      >
-        <!-- Левый блок с текстом -->
-        <div class="md:w-1/2 text-left">
-          <h1 class="text-4xl md:text-7xl text-gray-600 font-gilroy-extrabold mb-6">
-            Громадський рух 
-          </h1>
-          <h1 class="text-4xl md:text-7xl text-[#DC221C] font-gilroy-extrabold mb-6">
-           ВІДСІЧ
-          </h1>
-          <p
-            class="text-xl md:text-2xl max-w-2xl mb-8 font-gilroy-regular text-gray-600"
-          >
-            Об'єднуємо зусилля для захисту прав людини, демократичних цінностей
-            та протидії пропаганді
-          </p>
-          <div
-            class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4"
-          >
-            <button
-              id="open-form"
-              class="bg-[#DC221C] font-gilroy-bold text-white px-6 py-3 rounded hover:bg-[#BF2121] transition"
-            >
-              Долучитися
-            </button>
-            <button
-              class="bg-transparent font-gilroy-bold border-2 border-[#DC221C] px-6 py-3 rounded hover:bg-[#DC221C] hover:text-black transition"
-            >
-              Дізнатися більше
-            </button>
-          </div>
-        </div>
+      <section id="home" class="hero-bg py-2 md:py-2">
+        <img
+          src="img/png/birds.png"
+          alt="Птахи"
+          class="absolute bottom-0 left-1/2 transform -translate-x-[55%] w-[1200px] opacity-100 pointer-events-none z-10"
+        />
+        <div class="absolute inset-0 z-0 animate-bg-scrolling bg-pattern"></div>
 
-        <!-- Модальное окно -->
+        <!-- Контейнер с контентом и birds.png -->
+
         <div
-          id="join-modal"
-          class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+          class="relative z-10 container mx-auto px-4 flex flex-col md:flex-row items-center justify-between"
         >
-          <div class="bg-white rounded-lg w-full max-w-md p-6 relative">
-            <!-- Кнопка-крестик в правом верхнем углу формы -->
-            <button
-              id="close-form"
-              class="absolute top-2 right-2 text-gray-500 hover:text-black"
-              aria-label="Закрити"
+          <!-- Левый блок с текстом -->
+          <div class="md:w-1/2 text-left">
+            <h1
+              class="text-4xl md:text-6xl text-gray-200 font-gilroy-extrabold mb-6"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-            <h2 class="text-2xl font-bold mb-4 text-[#DC221C]">Долучитися</h2>
-            <form id="join-form" class="space-y-4">
-              <input
-                name="name"
-                type="text"
-                placeholder="ПІБ"
-                required
-                class="w-full border px-3 py-2 rounded"
-              />
-              <input
-                name="email"
-                type="email"
-                placeholder="Email (по можливості)"
-                class="w-full border px-3 py-2 rounded"
-              />
-              <input
-                name="phone"
-                type="text"
-                placeholder="Контактний телефон"
-                class="w-full border px-3 py-2 rounded"
-              />
-              <textarea
-                name="notes"
-                placeholder="Примітки"
-                class="w-full border px-3 py-2 rounded"
-              ></textarea>
-              <button
-                type="submit"
-                class="bg-[#DC221C] text-white px-6 py-2 rounded hover:bg-[#BF2121]"
-              >
-                Надіслати
-              </button>
-            </form>
-            <p id="form-success" class="mt-4 text-green-600 font-bold hidden">
-              Дякуємо за заповнення! Повернемося до вас з відповіддю незабаром
+              Громадський рух
+            </h1>
+            <h1
+              class="text-4xl md:text-6xl text-[#DC221C] font-gilroy-extrabold mb-6"
+            >
+              ВІДСІЧ
+            </h1>
+            <p
+              class="text-xl md:text-2xl max-w-2xl mb-8 font-gilroy-regular text-gray-300"
+            >
+              Об'єднуємо зусилля для захисту прав людини, демократичних
+              цінностей та протидії пропаганді
             </p>
-            <button
-              id="close-form"
-              class="mt-4 text-sm text-blue-600 hover:underline"
-            ></button>
+            <div class="flex justify-start">
+              <button
+                id="open-form"
+                class="bg-[#DC221C] font-gilroy-bold text-white px-8 py-4 rounded-full text-lg hover:bg-[#BF2121] transition"
+              >
+                Долучитися
+              </button>
+            </div>
+          </div>
+
+          <!-- Модальное окно -->
+          <div
+            id="join-modal"
+            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+          >
+            <div class="bg-white rounded-lg w-full max-w-md p-6 relative">
+              <!-- Кнопка-крестик в правом верхнем углу формы -->
+              <button
+                id="close-form"
+                class="absolute top-2 right-2 text-gray-500 hover:text-black"
+                aria-label="Закрити"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+              <h2 class="text-2xl font-bold mb-4 text-[#DC221C]">Долучитися</h2>
+              <form id="join-form" class="space-y-4">
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="ПІБ"
+                  required
+                  class="w-full border px-3 py-2 rounded"
+                />
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Email (по можливості)"
+                  class="w-full border px-3 py-2 rounded"
+                />
+                <input
+                  name="phone"
+                  type="text"
+                  placeholder="Контактний телефон"
+                  class="w-full border px-3 py-2 rounded"
+                />
+                <textarea
+                  name="notes"
+                  placeholder="Примітки"
+                  class="w-full border px-3 py-2 rounded"
+                ></textarea>
+                <button
+                  type="submit"
+                  class="bg-[#DC221C] text-white px-6 py-2 rounded hover:bg-[#BF2121]"
+                >
+                  Надіслати
+                </button>
+              </form>
+              <p id="form-success" class="mt-4 text-green-600 font-bold hidden">
+                Дякуємо за заповнення! Повернемося до вас з відповіддю незабаром
+              </p>
+              <button
+                id="close-form"
+                class="mt-4 text-sm text-blue-600 hover:underline"
+              ></button>
+            </div>
+          </div>
+
+          <!-- Правый блок с баннером -->
+          <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+            <img
+              src="img/png/banner-Cossack.png"
+              alt="Козак"
+              class="w-[300px] md:w-[400px] lg:w-[500px] h-auto object-contain"
+            />
           </div>
         </div>
-
-        <!-- Правый блок с баннером -->
-        <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-          <img
-            src="img/png/banner-Cossack.png"
-            alt="Козак"
-            class="w-[300px] md:w-[400px] lg:w-[500px] h-auto object-contain"
-          />
-        </div>
-      </div>
-    </section>
+      </section>
     </main>
 
     <!-- Mission Section -->
@@ -496,7 +501,7 @@
     </section>
 
     <!-- About Section -->
-  <!--  <section id="about" class="py-16">
+    <!--  <section id="about" class="py-16">
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
@@ -538,30 +543,55 @@
     <section id="actions" class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4">Наші акції та події</h2>
+          <h2 class="text-3xl font-bold mb-4">Наші події та новини</h2>
           <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-            Беріть участь у наших акціях та допомагайте створювати позитивні
+            Беріть участь у наших подіях та допомагайте створювати позитивні
             зміни у суспільстві
           </p>
         </div>
-    
+        <div id="fb-root"></div>
+        <script
+          async
+          defer
+          crossorigin="anonymous"
+          src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v22.0"
+        ></script>
+
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Новый блок с постом Facebook -->
-          <div class="bg-white rounded-lg overflow-hidden shadow-md news-card transition duration-300">
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md news-card transition duration-300 hover:shadow-lg"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="img/png/v2.jpg"
+                alt="Action 2"
+                class="w-full h-48 object-cover object-top transform transition-transform duration-300 hover:scale-105"
+              />
+            </div>
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-3">Новий пост у Facebook</h3>
-              <div class="facebook-post-wrapper">
-                <iframe 
-                  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fngo.vidsich%2Fposts%2Fpfbid02PGCdTNzDrRtiAks3VNcZ7WzhEvwrkekM1GLNpqS4E5d7dVoEe3qJPTgTpik1XMz9l&show_text=true&width=500" 
-                  width="500" 
-                  height="811" 
-                  style="border:none;overflow:hidden"
-                  scrolling="no" 
-                  frameborder="0" 
-                  allowfullscreen="true" 
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                </iframe>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm text-[#DC221C] font-medium"
+                  >3 лютого 2025</span
+                >
+                <span class="text-xs bg-gray-100 px-2 py-1 rounded"
+                  >Покровськ</span
+                >
               </div>
+              <h3 class="text-xl font-semibold mb-3">
+                Покровський напрямок: Збір
+              </h3>
+              <p class="text-gray-600 mb-4">
+                8 лютого виїжджаємо на фронт. Є можливість у кожного допомогти
+                #Вижити, і захищати далі наше з вами життя , нашим Захисникам
+              </p>
+              <a
+                href="https://www.facebook.com/share/p/1ARgKmws34/"
+                target="_blank"
+                class="inline-block text-[#DC221C] font-medium hover:text-yellow-700 transition"
+              >
+                Детальніше →
+              </a>
             </div>
           </div>
 
@@ -569,28 +599,28 @@
             class="bg-white rounded-lg overflow-hidden shadow-md news-card transition duration-300"
           >
             <img
-              src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              src="img/png/v1.jpg"
               alt="Action 2"
-              class="w-full h-48 object-cover"
+              class="w-full h-48 object-cover object-top transform transition-transform duration-300 hover:scale-105"
             />
             <div class="p-6">
               <div class="flex justify-between items-center mb-2">
                 <span class="text-sm text-[#DC221C] font-medium"
-                  >22 червня 2023</span
+                  >2 лютого 2025</span
                 >
-                <span class="text-xs bg-gray-100 px-2 py-1 rounded"
-                  >Онлайн</span
-                >
+                <span class="text-xs bg-gray-100 px-2 py-1 rounded">Cхід</span>
               </div>
               <h3 class="text-xl font-semibold mb-3">
-                Вебінар: Як розпізнати пропаганду
+                Поїздка на Схід: Фото звіт
               </h3>
               <p class="text-gray-600 mb-4">
-                Практичні поради з виявлення маніпуляцій та дезінформації в
-                медіа.
+                Дякуємо Гуманітарна Нова пошта за дуже швидку доставку на фронт,
+                абсолютно безкоштовну
               </p>
               <button
                 class="text-[#DC221C] font-medium hover:text-yellow-700 transition"
+                href="https://www.facebook.com/share/p/182VEherjC/"
+                target="_blank"
               >
                 Детальніше →
               </button>
@@ -601,26 +631,30 @@
             class="bg-white rounded-lg overflow-hidden shadow-md news-card transition duration-300"
           >
             <img
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              src="img/png/v5.jpg"
               alt="Action 3"
-              class="w-full h-48 object-cover"
+              class="w-full h-48 object-cover object-top transform transition-transform duration-300 hover:scale-105"
             />
             <div class="p-6">
               <div class="flex justify-between items-center mb-2">
                 <span class="text-sm text-[#DC221C] font-medium"
-                  >30 червня 2023</span
+                  >4 лютого 2025</span
                 >
-                <span class="text-xs bg-gray-100 px-2 py-1 rounded">Львів</span>
+                <span class="text-xs bg-gray-100 px-2 py-1 rounded"
+                  >Донецька область</span
+                >
               </div>
               <h3 class="text-xl font-semibold mb-3">
-                Фестиваль громадянської активності
+                "Не зупиняємося підтримувати": фотозвіт
               </h3>
               <p class="text-gray-600 mb-4">
-                Зустріч активістів, дискусії та майстер-класи з громадянської
-                участі.
+                ✅12 ноутбуків отримали Котики в підмогу Дякуємо кожному , за
+                підтримку
               </p>
               <button
                 class="text-[#DC221C] font-medium hover:text-yellow-700 transition"
+                href="https://www.facebook.com/share/p/1EQs2De6mJ/"
+                target="_blank"
               >
                 Детальніше →
               </button>
@@ -644,63 +678,63 @@
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-4">Медіа</h2>
           <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-            Новини 
+            Фото та відео з наших заходів
           </p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           <div class="aspect-square bg-gray-200 rounded overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              src="img/png/v1.jpg"
               alt="Media 1"
               class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
             />
           </div>
           <div class="aspect-square bg-gray-200 rounded overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1529107386315-e1c2e26d10d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+              src="img/png/v2.jpg"
               alt="Media 2"
               class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
             />
           </div>
           <div class="aspect-square bg-gray-200 rounded overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              src="img/png/v3.jpg"
               alt="Media 3"
               class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
             />
           </div>
           <div class="aspect-square bg-gray-200 rounded overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              src="img/png/v4.jpg"
               alt="Media 4"
               class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
             />
           </div>
           <div class="aspect-square bg-gray-200 rounded overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              src="img/png/v5.jpg"
               alt="Media 5"
               class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
             />
           </div>
           <div class="aspect-square bg-gray-200 rounded overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1529107386315-e1c2e26d10d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+              src="img/png/v6.jpg"
               alt="Media 6"
               class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
             />
           </div>
           <div class="aspect-square bg-gray-200 rounded overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              src="img/png/v7.jpg"
               alt="Media 7"
               class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
             />
           </div>
           <div class="aspect-square bg-gray-200 rounded overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              src="img/png/v8.jpg"
               alt="Media 8"
               class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
             />
@@ -718,7 +752,7 @@
     </section>
 
     <!-- Newsletter Section -->
-   <!-- <section class="py-16 bg-black text-white">
+    <!-- <section class="py-16 bg-black text-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto text-center">
           <h2 class="text-3xl font-bold mb-4">Підпишіться на нашу розсилку</h2>
@@ -1002,21 +1036,21 @@
     <script>
       // Mobile menu toggle
       document.addEventListener("DOMContentLoaded", function () {
-    const burger = document.getElementById("burger");
-    const menu = document.getElementById("mobile-menu");
+        const burger = document.getElementById("burger");
+        const menu = document.getElementById("mobile-menu");
 
-    burger.addEventListener("click", () => {
-      burger.classList.toggle("burger-open");
-      menu.classList.toggle("-translate-x-full");
-    });
+        burger.addEventListener("click", () => {
+          burger.classList.toggle("burger-open");
+          menu.classList.toggle("-translate-x-full");
+        });
 
-    menu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        burger.classList.remove("burger-open");
-        menu.classList.add("-translate-x-full");
+        menu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            burger.classList.remove("burger-open");
+            menu.classList.add("-translate-x-full");
+          });
+        });
       });
-    });
-  });
 
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

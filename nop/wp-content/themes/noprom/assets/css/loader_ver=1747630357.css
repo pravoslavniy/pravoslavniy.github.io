@@ -1,0 +1,44 @@
+.ba-loader {
+  position: relative;
+}
+
+@keyframes flickerAnimation {
+  0%   { opacity: 0.8; }
+  50%  { opacity: 0.4; }
+  100% { opacity: 0.8; }
+}
+@-o-keyframes flickerAnimation{
+  0%   { opacity: 0.8; }
+  50%  { opacity: 0.4; }
+  100% { opacity: 0.8; }
+}
+@-moz-keyframes flickerAnimation{
+  0%   { opacity: 0.8; }
+  50%  { opacity: 0.4; }
+  100% { opacity: 0.8; }
+}
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity: 0.8; }
+  50%  { opacity: 0.4; }
+  100% { opacity: 0.8; }
+}
+
+.ba-loader.en-lang-loader::before {
+  background: url(../img/loading-spinner-en.svg) center center no-repeat, #fff;
+  background-size: 200px 100px;
+}
+
+.ba-loader::before {
+  display: block;
+  content: " ";
+  position: absolute;
+  background: url(../images/Logo_ukr.svg) center center no-repeat, #fff;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* opacity: 0.75; */
+  /*animation: flickerAnimation 3s infinite;*/
+  z-index: 50;
+  background-size: 200px 100px;
+}
